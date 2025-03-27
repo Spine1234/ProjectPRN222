@@ -1,0 +1,1429 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\profile\\viewticket.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\profile\\viewticket.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\shared\\components\\recentbookings\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\shared\\components\\recentbookings\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\profile\\bookinghistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\profile\\bookinghistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\viewcomponents\\recentbookingsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\viewcomponents\\recentbookingsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\booking\\selectseats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\booking\\selectseats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\booking\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\booking\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\booking\\confirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\booking\\confirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\models\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 190,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1377497384:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{588470cc-84f8-4a57-9ac4-86bca0625ff4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1928210406:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:350743133:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:23:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:29:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:34:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f5cd1b51-c771-5648-966f-646d419b1e7c}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:41:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:30:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:38:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:69:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:27:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:70:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:71:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:69:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:73:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:72:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:54:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:93:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:37:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:49:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:68:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:67:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:33:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:45:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:45:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1196186238:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:21:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:29:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:46:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:47:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:63:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:64:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:65:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:32:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:31:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:34:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:37:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:36:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:39:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:40:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:43:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:42:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:41:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{99a11807-c5db-4877-ad35-09b56a044012}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{9a7cebbb-dc5c-4986-bc49-962da46aa506}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{80c411e8-fd5e-4b16-914b-0d9d84172cc1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:48:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:44:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:63:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:74:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:24:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:25:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:26:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "CinemaManagement\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBUAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:12:55.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CinemaManagement\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAHsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:12:27.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\Edit.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\Edit.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\Edit.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Profile\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T13:04:15.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookingHistory.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\BookingHistory.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\BookingHistory.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\BookingHistory.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Profile\\BookingHistory.cshtml",
+              "ViewState": "AQIAABQAAAAAAAAAAAAIwC0AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T13:03:52.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\Index.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Profile\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T13:03:31.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\ProfileController.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "CinemaManagement\\Controllers\\ProfileController.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAcwBYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T13:02:57.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\MoviesController.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "CinemaManagement\\Controllers\\MoviesController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAQwBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:11:50.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "CinemaManagement\\appsettings.json",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\appsettings.json",
+              "RelativeToolTip": "CinemaManagement\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-24T16:07:39.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:19:03.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SelectSeats.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\SelectSeats.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\SelectSeats.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\SelectSeats.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Booking\\SelectSeats.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T06:34:36.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "CinemaManagement\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "CinemaManagement\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAAHkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-25T06:28:20.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewTicket.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\ViewTicket.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\ViewTicket.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\ViewTicket.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Profile\\ViewTicket.cshtml",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAIwF4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T13:06:04.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBgAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:14:44.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RecentBookingsViewComponent.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\ViewComponents\\RecentBookingsViewComponent.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\ViewComponents\\RecentBookingsViewComponent.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\ViewComponents\\RecentBookingsViewComponent.cs",
+              "RelativeToolTip": "CinemaManagement\\ViewComponents\\RecentBookingsViewComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T13:13:42.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\Components\\RecentBookings\\Default.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Shared\\Components\\RecentBookings\\Default.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\Components\\RecentBookings\\Default.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Shared\\Components\\RecentBookings\\Default.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T13:15:45.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\Booking.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\Booking.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\Booking.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T13:25:21.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Success.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Success.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\Success.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Success.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Booking\\Success.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T06:35:45.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CinemaManagement\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAYwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:10:33.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Program.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Program.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Program.cs",
+              "RelativeToolTip": "CinemaManagement\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:15:31.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "CinemaManagement\\Controllers\\BookingController.cs",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAwwDYBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T06:32:43.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T06:31:44.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\Index.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Booking\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T06:34:10.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Confirm.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Confirm.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\Confirm.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Confirm.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Booking\\Confirm.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T06:35:17.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAwAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T06:22:58.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Movies\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Movies\\Index.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Movies\\Index.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Movies\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAkwCUAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:16:32.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:17:26.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Movies\\Details.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Movies\\Details.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Movies\\Details.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Movies\\Details.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAIwDwAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:16:53.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:15:53.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\ErrorViewModel.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\ErrorViewModel.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\ViewModels\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:15:18.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:14:05.927Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 73,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:31:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:32:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{5b6781c0-e99d-11d0-9954-00a0c91bc8e5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1304,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{93c5e7ad-af06-49e6-a756-b8f3eaca790d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:43:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:22:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:23:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:24:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:27:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:30:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:28:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:35:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{260978c3-582c-487d-ab12-c1fdde07c578}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:21:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:25:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:26:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:33:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:35:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:36:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:38:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:39:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:40:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:42:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:28:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:22:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

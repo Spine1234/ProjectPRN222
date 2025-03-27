@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Xác nhận đặt vé";
+    var showtime = ViewBag.Showtime as Showtime;
+    var seats = ViewBag.Seats as List<Seat>;
+    decimal totalAmount = ViewBag.TotalAmount;
+}
+
+<div class="container">
+    <h2>Xác nhận đặt vé</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Thông tin đặt vé</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Phim: @showtime.Movie.Title</h6>
+                    <p>
+                        <strong>Thời gian:</strong> @showtime.StartTime.ToString("dd/MM/yyyy HH:mm")<br />
+                        <strong>Phòng chiếu:</strong> @showtime.Room.Name
+                    </p>
+
+                    <h6>Ghế đã chọn:</h6>
+                    <ul>
+                        @foreach (var seat in seats)
+                        {
+                            <li>
+                                Ghế @seat.RowNumber@seat.SeatNumber (@seat.SeatType.Name):
+                                @string.Format("{0:N0} VNĐ", showtime.BasePrice * seat.SeatType.PriceMultiplier)
+                            </li>
+                        }
+                    </ul>
+
+                    <h6>Tổng tiền: @string.Format("{0:N0} VNĐ", totalAmount)</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Phương thức thanh toán</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Confirm" method="post">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="Cash" checked>
+                            <label class="form-check-label" for="cash">
+                                Thanh toán tiền mặt
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="Credit Card">
+                            <label class="form-check-label" for="creditCard">
+                                Thẻ tín dụng
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="banking" value="Banking">
+                            <label class="form-check-label" for="banking">
+                                Chuyển khoản ngân hàng
+                            </label>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Xác nhận đặt vé</button>
+                            <a asp-action="SelectSeats" asp-route-id="@showtime.ShowtimeId" class="btn btn-secondary">Quay lại</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CinemaManagement.Models.Booking>
+@if (!Model.Any())
+{
+    <div class="text-center py-3">
+        <p>Bạn chưa đặt vé nào</p>
+    </div>
+}
+else
+{
+    foreach (var booking in Model)
+    {
+        var firstTicket = booking.Tickets.FirstOrDefault();
+        var movie = firstTicket?.Showtime?.Movie;
+        var showtime = firstTicket?.Showtime;
+        <div class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@(movie?.Title ?? "N/A")</h5>
+                <small>@booking.BookingDate.Value.ToString("dd/MM/yyyy")</small>
+            </div>
+            <p class="mb-1">
+                Suất chiếu: @(showtime != null ? showtime.StartTime.ToString("dd/MM/yyyy HH:mm") : "N/A")<br />
+                Số lượng: @booking.Tickets.Count vé<br />
+                Tổng tiền: @booking.TotalAmount.ToString("N0") VNĐ
+            </p>
+            <div class="d-flex justify-content-between">
+                <small>Mã đặt vé: #@booking.BookingId</small>
+                <a asp-controller="Profile" asp-action="BookingHistory" class="btn btn-sm btn-outline-secondary">Chi tiết</a>
+            </div>
+        </div>
+    }
+}

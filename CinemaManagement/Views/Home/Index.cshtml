@@ -1,0 +1,31 @@
+﻿@model List<CinemaManagement.Models.Movie>
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="jumbotron">
+    <h1>Rạp Chiếu Phim</h1>
+    <p>Chào mừng đến với hệ thống đặt vé xem phim trực tuyến</p>
+</div>
+
+<h2>Phim đang chiếu</h2>
+
+<div class="row">
+    @foreach (var movie in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="@(string.IsNullOrEmpty(movie.PosterUrl) ? "/images/no-image.jpg" : movie.PosterUrl)"
+                     class="card-img-top" alt="@movie.Title" style="height: 300px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">@movie.Title</h5>
+                    <p class="card-text text-truncate">@movie.Description</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.MovieId" class="btn btn-primary">Chi tiết</a>
+                    <a asp-controller="Booking" asp-action="Index" asp-route-id="@movie.MovieId" class="btn btn-success">Đặt vé</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

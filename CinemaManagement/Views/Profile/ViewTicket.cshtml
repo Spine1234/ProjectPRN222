@@ -1,0 +1,105 @@
+﻿@model CinemaManagement.Models.Ticket
+@{
+    ViewData["Title"] = "Chi tiết vé";
+}
+
+<div class="container py-4">
+    <h2>Chi tiết vé</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5 class="mb-0">Vé xem phim - @Model.TicketCode</h5>
+                </div>
+                <div class="card-body">
+                    <div class="ticket-container">
+                        <div class="ticket-header text-center mb-4">
+                            <h4>@Model.Showtime.Movie.Title</h4>
+                            <p class="text-muted">@Model.Showtime.Movie.Duration phút</p>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <h6>Suất chiếu</h6>
+                                <p>@Model.Showtime.StartTime.ToString("dd/MM/yyyy HH:mm")</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6>Phòng chiếu</h6>
+                                <p>@Model.Showtime.Room.Name</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <h6>Ghế</h6>
+                                <p>@Model.Seat.RowNumber@Model.Seat.SeatNumber (@Model.Seat.SeatType.Name)</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6>Giá vé</h6>
+                                <p>@string.Format("{0:N0} VNĐ", Model.Price)</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <h6>Trạng thái</h6>
+                                <p>
+                                    @if (Model.Status == "Active")
+                                    {
+                                        <span class="badge bg-success">Có hiệu lực</span>
+                                    }
+                                    else if (Model.Status == "Used")
+                                    {
+                                        <span class="badge bg-secondary">Đã sử dụng</span>
+                                    }
+                                    else if (Model.Status == "Cancelled")
+                                    {
+                                        <span class="badge bg-danger">Đã hủy</span>
+                                    }
+                                </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6>Ngày đặt</h6>
+                                <p>@Model.Booking.BookingDate.Value.ToString("dd/MM/yyyy HH:mm")</p>
+                            </div>
+                        </div>
+
+                        <div class="ticket-barcode text-center mt-4">
+                            <div class="d-inline-block p-3 bg-light">
+                                <h5>@Model.TicketCode</h5>
+                            </div>
+                            <p class="text-muted mt-2">Vui lòng xuất trình mã này tại rạp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="BookingHistory" class="btn btn-secondary">Quay lại</a>
+                    @if (Model.Status == "Active" && Model.Showtime.StartTime > DateTime.Now)
+                    {
+                        <button class="btn btn-primary" onclick="window.print()">In vé</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* CSS cho in vé */
+    @@media print {
+        header, footer, .btn {
+            display: none !important;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .card {
+            border: 1px solid #000;
+            box-shadow: none !important;
+        }
+    }
+</style>

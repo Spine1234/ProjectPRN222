@@ -1,0 +1,415 @@
+﻿@{
+    ViewData["Title"] = "Chọn ghế";
+    var showtime = ViewBag.Showtime as Showtime;
+    var bookedSeats = ViewBag.BookedSeats as List<int> ?? new List<int>();
+}
+
+<div class="container">
+    <h2>Chọn ghế</h2>
+
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>@showtime.Movie.Title</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <strong>Thời gian:</strong> @showtime.StartTime.ToString("dd/MM/yyyy HH:mm")<br />
+                        <strong>Phòng chiếu:</strong> @showtime.Room.Name<br />
+                        <strong>Giá vé cơ bản:</strong> @string.Format("{0:N0} VNĐ", showtime.BasePrice)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center mb-4">
+            <div class="screen">Màn hình</div>
+            <div class="screen-shadow"></div>
+        </div>
+    </div>
+
+    <form asp-action="SelectSeats" method="post">
+        <input type="hidden" name="showtimeId" value="@showtime.ShowtimeId" />
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="seat-layout">
+                    @{
+                        var seats = showtime.Room.Seats.OrderBy(s => s.RowNumber).ThenBy(s => s.SeatNumber).ToList();
+                        var rows = seats.Select(s => s.RowNumber).Distinct().OrderBy(r => r).ToList();
+                    }
+
+                    @foreach (var row in rows)
+                    {
+                        <div class="seat-row">
+                            <div class="row-label">@row</div>
+                            @foreach (var seat in seats.Where(s => s.RowNumber == row).OrderBy(s => s.SeatNumber))
+                            {
+                                string seatClass = "seat";
+                                string seatStatus = "available";
+
+                                @* In ra debug message để kiểm tra *@
+                                @* <text>@seat.SeatId: @(bookedSeats.Contains(seat.SeatId) ? "Booked" : "Available")</text> *@
+
+                                if (bookedSeats.Contains(seat.SeatId))
+                                {
+                                    seatClass += " booked";
+                                    seatStatus = "booked";
+                                }
+                                else if (seat.Status != "Available")
+                                {
+                                    seatClass += " unavailable";
+                                    seatStatus = "unavailable";
+                                }
+                                else
+                                {
+                                    switch (seat.SeatTypeId)
+                                    {
+                                        case 1: // Standard
+                                            seatClass += " standard";
+                                            break;
+                                        case 2: // VIP
+                                            seatClass += " vip";
+                                            break;
+                                        case 3: // Couple
+                                            seatClass += " couple";
+                                            break;
+                                    }
+                                }
+
+                                <div class="@seatClass" data-seat-id="@seat.SeatId" data-status="@seatStatus" data-price="@(showtime.BasePrice * seat.SeatType.PriceMultiplier)">
+                                    @seat.SeatNumber
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Thông tin ghế</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="seat-info">
+                            <div class="seat-legend">
+                                <div class="seat-type standard"></div>
+                                <span>Ghế thường: @string.Format("{0:N0} VNĐ", showtime.BasePrice)</span>
+                            </div>
+                            <div class="seat-legend">
+                                <div class="seat-type vip"></div>
+                                <span>Ghế VIP: @string.Format("{0:N0} VNĐ", showtime.BasePrice * 1.5m)</span>
+                            </div>
+                            <div class="seat-legend">
+                                <div class="seat-type couple"></div>
+                                <span>Ghế đôi: @string.Format("{0:N0} VNĐ", showtime.BasePrice * 2m)</span>
+                            </div>
+                            <div class="seat-legend">
+                                <div class="seat-type booked"></div>
+                                <span>Ghế đã đặt</span>
+                            </div>
+                            <div class="seat-legend">
+                                <div class="seat-type selected"></div>
+                                <span>Ghế đang chọn</span>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div id="selected-seats-container">
+                            <h6>Ghế đã chọn:</h6>
+                            <ul id="selected-seats-list">
+                                <!-- JS will populate this -->
+                            </ul>
+                        </div>
+
+                        <hr>
+
+                        <div class="total-container">
+                            <h6>Tổng tiền: <span id="total-amount">0 VNĐ</span></h6>
+                        </div>
+
+                        <div id="selected-seats-inputs">
+                            <!-- JS will populate hidden inputs for selected seats -->
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-success" id="btnContinue" disabled>Tiếp tục</button>
+                            <a asp-action="Index" asp-route-id="@showtime.MovieId" class="btn btn-secondary">Quay lại</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Styles {
+    <style>
+        .screen {
+            background-color: #fff;
+            height: 30px;
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .screen-shadow {
+            border-bottom: 50px solid rgba(0, 0, 0, 0.1);
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            height: 0;
+            width: 60%;
+            margin: 0 auto 30px;
+        }
+
+        .seat-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .seat-row {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .row-label {
+            width: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .seat {
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 3px;
+            color: #000;
+        }
+
+            .seat.standard {
+                background-color: #b8e0d2;
+            }
+
+            .seat.vip {
+                background-color: #95b8d1;
+            }
+
+            .seat.couple {
+                background-color: #d8a7b1;
+                width: 70px;
+            }
+
+            .seat.selected {
+                background-color: #76b947;
+                color: white;
+            }
+
+            .seat.booked, .seat.unavailable {
+                background-color: #ddd;
+                cursor: not-allowed;
+                color: #999;
+                text-decoration: line-through;
+            }
+
+        .seat-legend {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .seat-type {
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+            .seat-type.standard {
+                background-color: #b8e0d2;
+            }
+
+            .seat-type.vip {
+                background-color: #95b8d1;
+            }
+
+            .seat-type.couple {
+                background-color: #d8a7b1;
+            }
+
+            .seat-type.selected {
+                background-color: #76b947;
+            }
+
+            .seat-type.booked {
+                background-color: #ddd;
+            }
+
+        #selected-seats-list {
+            padding-left: 20px;
+        }
+
+        .total-container {
+            font-weight: bold;
+        }
+
+        .seat.booked, .seat.unavailable {
+            background-color: #ddd;
+            cursor: not-allowed;
+            color: #999;
+            text-decoration: line-through;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            console.log("Page loaded, checking for booking completion...");
+
+            // Kiểm tra nếu vừa hoàn thành đặt vé
+            if (sessionStorage.getItem('bookingCompleted') === 'true') {
+                console.log("Booking was completed, refreshing page...");
+                // Xóa trạng thái đã hoàn thành
+                sessionStorage.removeItem('bookingCompleted');
+                // Làm mới trang để cập nhật trạng thái ghế - thêm timestamp để tránh cache
+                window.location.href = window.location.pathname + '?id=@showtime.ShowtimeId&t=' + new Date().getTime();
+                return; // Ngăn thực thi code tiếp theo
+            }
+
+            // Gọi hàm refresh ngay khi trang load
+            refreshBookedSeats();
+
+            // Thêm hàm refresh ghế định kỳ
+            function refreshBookedSeats() {
+                $.ajax({
+                    url: '@Url.Action("GetBookedSeats", "Booking")',
+                    type: 'GET',
+                    data: { showtimeId: @showtime.ShowtimeId },
+                    success: function (bookedSeats) {
+                        console.log("Refreshed booked seats:", bookedSeats);
+
+                        // Cập nhật giao diện ghế
+                        $('.seat').each(function () {
+                            const $seat = $(this);
+                            const seatId = $seat.data('seat-id');
+
+                            if (bookedSeats.includes(seatId)) {
+                                // Nếu ghế đã được đặt nhưng không có class booked
+                                if (!$seat.hasClass('booked')) {
+                                    $seat.addClass('booked').removeClass('standard vip couple selected');
+                                    $seat.data('status', 'booked');
+
+                                    // Nếu ghế này đang được chọn, loại bỏ
+                                    const index = selectedSeats.findIndex(s => s.id === seatId);
+                                    if (index > -1) {
+                                        selectedSeats.splice(index, 1);
+                                        updateSelection();
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Gọi hàm refresh mỗi 5 giây
+            setInterval(refreshBookedSeats, 5000);
+
+            const selectedSeats = [];
+            const formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' });
+
+            // Khi click vào ghế
+            $('.seat').click(function () {
+                const seatId = $(this).data('seat-id');
+                const status = $(this).data('status');
+                const price = $(this).data('price');
+
+                // Nếu ghế đã đặt hoặc không khả dụng, không làm gì cả
+                if (status === 'booked' || status === 'unavailable') {
+                    return;
+                }
+
+                // Nếu ghế đã chọn, bỏ chọn
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                    const index = selectedSeats.findIndex(s => s.id === seatId);
+                    if (index > -1) {
+                        selectedSeats.splice(index, 1);
+                    }
+                } else {
+                    // Ngược lại, chọn ghế
+                    $(this).addClass('selected');
+                    selectedSeats.push({
+                        id: seatId,
+                        number: $(this).text().trim(),
+                        row: $(this).parent().find('.row-label').text().trim(),
+                        price: price
+                    });
+                }
+
+                updateSelection();
+            });
+
+            function updateSelection() {
+                // Cập nhật danh sách ghế đã chọn
+                const $list = $('#selected-seats-list');
+                $list.empty();
+
+                // Cập nhật các input ẩn
+                const $inputContainer = $('#selected-seats-inputs');
+                $inputContainer.empty();
+
+                let totalAmount = 0;
+
+                selectedSeats.forEach(seat => {
+                    $list.append(`<li>Ghế ${seat.row}${seat.number} - ${formatter.format(seat.price)}</li>`);
+                    $inputContainer.append(`<input type="hidden" name="selectedSeats" value="${seat.id}" />`);
+                    totalAmount += seat.price;
+                });
+
+                // Cập nhật tổng tiền
+                $('#total-amount').text(formatter.format(totalAmount));
+
+                // Bật/tắt nút tiếp tục
+                $('#btnContinue').prop('disabled', selectedSeats.length === 0);
+            }
+
+            // Thêm kiểm tra trước khi submit form
+            $('form').on('submit', function (e) {
+                // Kiểm tra ghế một lần nữa trước khi submit
+                refreshBookedSeats();
+                // Nếu không còn ghế nào được chọn (do bị đặt hết), ngăn submit
+                if (selectedSeats.length === 0) {
+                    e.preventDefault();
+                    alert('Vui lòng chọn ít nhất một ghế.');
+                    return false;
+                }
+            });
+
+            // Hiển thị thông báo lỗi nếu có
+        @if (TempData["Error"] != null)
+        {
+            <text>
+                    alert('@TempData["Error"]');
+            </text>
+        }
+                });
+    </script>
+}

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CinemaManagement.Models.Movie>
+@{
+    ViewData["Title"] = "Danh sách phim";
+}
+
+<h1>Danh sách phim</h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="@(string.IsNullOrEmpty(item.PosterUrl) ? "/images/no-image.jpg" : item.PosterUrl)"
+                     class="card-img-top" alt="@item.Title" style="height: 300px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">
+                        <small>
+                            @if (item.Director != null)
+                            {
+                                <span>Đạo diễn: @item.Director.FullName</span>
+
+                                <br />
+                            }
+                            <span>Thời lượng: @item.Duration phút</span><br />
+                            <span>Khởi chiếu: @(item.ReleaseDate.HasValue ? item.ReleaseDate.Value.ToString("dd/MM/yyyy") : "Chưa xác định")</span>
+                        </small>
+                    </p>
+                    <p class="card-text text-truncate">@item.Description</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-primary">Chi tiết</a>
+                    <a asp-controller="Booking" asp-action="Index" asp-route-id="@item.MovieId" class="btn btn-success">Đặt vé</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

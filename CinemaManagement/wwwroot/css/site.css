@@ -1,0 +1,142 @@
+/* Booking - Seat Selection */
+.screen {
+    background-color: #fff;
+    height: 30px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.screen-shadow {
+    border-bottom: 50px solid rgba(0, 0, 0, 0.1);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    height: 0;
+    width: 60%;
+    margin: 0 auto 30px;
+}
+
+.seat-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.seat-row {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.row-label {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.seat {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 3px;
+    color: #000;
+    transition: all 0.2s;
+}
+
+    .seat.standard {
+        background-color: #b8e0d2;
+    }
+
+    .seat.vip {
+        background-color: #95b8d1;
+    }
+
+    .seat.couple {
+        background-color: #d8a7b1;
+        width: 70px;
+    }
+
+    .seat.selected {
+        background-color: #76b947;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .seat.booked, .seat.unavailable {
+        background-color: #ddd;
+        cursor: not-allowed;
+        color: #999;
+        text-decoration: line-through;
+    }
+
+.seat-legend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.seat-type {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+    .seat-type.standard {
+        background-color: #b8e0d2;
+    }
+
+    .seat-type.vip {
+        background-color: #95b8d1;
+    }
+
+    .seat-type.couple {
+        background-color: #d8a7b1;
+    }
+
+    .seat-type.selected {
+        background-color: #76b947;
+    }
+
+    .seat-type.booked {
+        background-color: #ddd;
+    }
+
+#selected-seats-list {
+    padding-left: 20px;
+}
+
+.total-container {
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* ??t vé thành công */
+.bi-check-circle-fill {
+    font-size: 4rem;
+    color: #28a745;
+}
+
+.seat-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.seat-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+    .seat-list li:last-child {
+        border-bottom: none;
+    }
