@@ -1,0 +1,48 @@
+﻿@model CinemaManagement.Models.Movie
+@{
+    ViewData["Title"] = "Xóa phim";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3>Xác nhận xóa phim</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        Bạn có chắc chắn muốn xóa phim này không? Hành động này không thể hoàn tác.
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 text-center">
+                            <img src="@(string.IsNullOrEmpty(Model.PosterUrl) ? "/images/no-image.jpg" : Model.PosterUrl)"
+                                 class="img-fluid" alt="@Model.Title" style="max-height: 250px;">
+                        </div>
+                        <div class="col-md-8">
+                            <h4>@Model.Title</h4>
+                            <p>
+                                <strong>Đạo diễn:</strong> @(Model.Director?.FullName ?? "Chưa cập nhật")<br />
+                                <strong>Thời lượng:</strong> @Model.Duration phút<br />
+                                <strong>Khởi chiếu:</strong> @(Model.ReleaseDate.HasValue ? Model.ReleaseDate.Value.ToString("dd/MM/yyyy") : "Chưa xác định")<br />
+                                <strong>Trạng thái:</strong> @Model.Status<br />
+                                <strong>Thể loại:</strong> @string.Join(", ", Model.Genres.Select(g => g.Name))
+                            </p>
+                            <p>@Model.Description</p>
+                        </div>
+                    </div>
+
+                    <form asp-action="MovieDelete" method="post">
+                        <input type="hidden" asp-for="MovieId" />
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Movies" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

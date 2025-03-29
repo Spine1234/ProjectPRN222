@@ -1,0 +1,266 @@
+﻿@model CinemaManagement.Models.Room
+@{
+    ViewData["Title"] = "Chi tiết phòng chiếu";
+    var seatTypes = ViewBag.SeatTypes as List<SeatType>;
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Chi tiết phòng chiếu: @Model.Name</h2>
+        <a asp-action="Rooms" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Quay lại
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Thông tin phòng chiếu</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <strong>Tên phòng:</strong> @Model.Name<br />
+                        <strong>Sức chứa:</strong> @Model.Capacity chỗ ngồi<br />
+                        <strong>Số ghế đã tạo:</strong> @Model.Seats.Count ghế<br />
+                        <strong>Trạng thái:</strong>
+                        @switch (Model.Status)
+                        {
+                            case "Available":
+                                <span class="badge bg-success">Khả dụng</span>
+                                break;
+                            case "Maintenance":
+                                <span class="badge bg-warning text-dark">Bảo trì</span>
+                                break;
+                            case "Unavailable":
+                                <span class="badge bg-danger">Không khả dụng</span>
+                                break;
+                            default:
+                                <span class="badge bg-secondary">@Model.Status</span>
+                                break;
+                        }
+                        <br />
+                        <strong>Mô tả:</strong> @Model.Description
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Thêm ghế mới</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="AddSeat" method="post">
+                        <input type="hidden" name="roomId" value="@Model.RoomId" />
+
+                        <div class="mb-3">
+                            <label class="form-label">Hàng</label>
+                            <input type="text" name="rowNumber" class="form-control" maxlength="1" required />
+                            <small class="text-muted">Ví dụ: A, B, C...</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Số ghế</label>
+                            <input type="number" name="seatNumber" class="form-control" min="1" max="99" required />
+                            <small class="text-muted">Ví dụ: 1, 2, 3...</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Loại ghế</label>
+                            <select name="seatTypeId" class="form-select" required>
+                                @foreach (var seatType in seatTypes)
+                                {
+                                    <option value="@seatType.SeatTypeId">@seatType.Name (x@seatType.PriceMultiplier)</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Thêm ghế</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Sơ đồ ghế</h5>
+                </div>
+                <div class="card-body">
+                    @if (!Model.Seats.Any())
+                    {
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            Chưa có ghế nào được thêm vào phòng này. Vui lòng thêm ghế bằng form bên trái.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="mb-4">
+                            <div class="theater-screen">
+                                <div class="screen">Màn hình</div>
+                                <div class="screen-shadow"></div>
+                            </div>
+                        </div>
+
+                        <div class="seat-layout">
+                            @{
+                                var rows = Model.Seats.Select(s => s.RowNumber).Distinct().OrderBy(r => r).ToList();
+                            }
+
+                            @foreach (var row in rows)
+                            {
+                                <div class="seat-row mb-2">
+                                    <div class="row-label me-2">@row</div>
+                                    @foreach (var seat in Model.Seats.Where(s => s.RowNumber == row).OrderBy(s => s.SeatNumber))
+                                    {
+                                        <div class="seat @seat.SeatType.Name.ToLower() me-1" data-seat-id="@seat.SeatId">
+                                            <span>@seat.SeatNumber</span>
+                                            <div class="seat-actions">
+                                                <form asp-action="RemoveSeat" method="post" class="d-inline">
+                                                    <input type="hidden" name="seatId" value="@seat.SeatId" />
+                                                    <input type="hidden" name="roomId" value="@Model.RoomId" />
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa ghế này?')">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                        <div class="seat-legend mt-4">
+                            @foreach (var seatType in seatTypes)
+                            {
+                                <div class="seat-type-legend me-3">
+                                    <div class="seat-type @seatType.Name.ToLower()"></div>
+                                    <span>@seatType.Name (x@seatType.PriceMultiplier)</span>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .theater-screen {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .screen {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    }
+
+    .screen-shadow {
+        height: 20px;
+        width: 70%;
+        margin: 0 auto;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
+    }
+
+    .seat-row {
+        display: flex;
+        align-items: center;
+    }
+
+    .row-label {
+        font-weight: bold;
+        width: 30px;
+        text-align: center;
+    }
+
+    .seat {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-weight: bold;
+    }
+
+        .seat:hover .seat-actions {
+            display: flex;
+        }
+
+    .seat-actions {
+        position: absolute;
+        display: none;
+        top: -15px;
+        right: -15px;
+    }
+
+    .seat.standard {
+        background-color: #b8e0d2;
+    }
+
+    .seat.vip {
+        background-color: #95b8d1;
+    }
+
+    .seat.couple {
+        background-color: #d8a7b1;
+        width: 80px;
+    }
+
+    .seat-legend {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .seat-type-legend {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .seat-type {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+
+        .seat-type.standard {
+            background-color: #b8e0d2;
+        }
+
+        .seat-type.vip {
+            background-color: #95b8d1;
+        }
+
+        .seat-type.couple {
+            background-color: #d8a7b1;
+        }
+</style>

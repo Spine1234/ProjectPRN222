@@ -1,0 +1,61 @@
+﻿@model CinemaManagement.Models.ViewModels.RoomViewModel
+@{
+    ViewData["Title"] = "Chỉnh sửa phòng chiếu";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Chỉnh sửa phòng chiếu</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="RoomEdit" method="post">
+                        <input type="hidden" asp-for="RoomId" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Capacity" class="form-label"></label>
+                            <input asp-for="Capacity" class="form-control" />
+                            <span asp-validation-for="Capacity" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Status" class="form-label"></label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="Available">Khả dụng</option>
+                                <option value="Maintenance">Bảo trì</option>
+                                <option value="Unavailable">Không khả dụng</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Rooms" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

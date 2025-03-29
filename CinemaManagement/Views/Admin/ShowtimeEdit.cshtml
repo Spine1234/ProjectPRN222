@@ -1,0 +1,118 @@
+﻿@model CinemaManagement.Models.ViewModels.ShowtimeViewModel
+@{
+    ViewData["Title"] = "Chỉnh sửa lịch chiếu";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Chỉnh sửa lịch chiếu</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="ShowtimeEdit" method="post">
+                        <input type="hidden" asp-for="ShowtimeId" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="MovieId" class="form-label"></label>
+                            <select asp-for="MovieId" class="form-select" asp-items="ViewBag.Movies">
+                                <option value="">-- Chọn phim --</option>
+                            </select>
+                            <span asp-validation-for="MovieId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="RoomId" class="form-label"></label>
+                            <select asp-for="RoomId" class="form-select" asp-items="ViewBag.Rooms">
+                                <option value="">-- Chọn phòng chiếu --</option>
+                            </select>
+                            <span asp-validation-for="RoomId" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="StartTime" class="form-label"></label>
+                                <input asp-for="StartTime" type="datetime-local" class="form-control" value="@Model.StartTime.ToString("yyyy-MM-ddTHH:mm")" />
+                                <span asp-validation-for="StartTime" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="EndTime" class="form-label"></label>
+                                <input asp-for="EndTime" type="datetime-local" class="form-control" value="@Model.EndTime.ToString("yyyy-MM-ddTHH:mm")" />
+                                <span asp-validation-for="EndTime" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="BasePrice" class="form-label"></label>
+                            <div class="input-group">
+                                <input asp-for="BasePrice" class="form-control" />
+                                <span class="input-group-text">VND</span>
+                            </div>
+                            <span asp-validation-for="BasePrice" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Status" class="form-label"></label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="Scheduled">Đã lên lịch</option>
+                                <option value="Cancelled">Đã hủy</option>
+                                <option value="Completed">Đã chiếu</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Showtimes" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Auto calculate end time based on movie duration when movie is selected
+            $('#MovieId').change(function () {
+                calculateEndTime();
+            });
+
+            $('#StartTime').change(function () {
+                calculateEndTime();
+            });
+
+            function calculateEndTime() {
+                var movieId = $('#MovieId').val();
+                var startTime = $('#StartTime').val();
+
+                if (movieId && startTime) {
+                    // Call AJAX to get movie duration
+                    $.ajax({
+                        url: '/Admin/GetMovieDuration',
+                        type: 'GET',
+                        data: { id: movieId },
+                        success: function (duration) {
+                            if (duration > 0) {
+                                var start = new Date(startTime);
+                                var end = new Date(start.getTime() + duration * 60000); // Convert minutes to milliseconds
+
+                                // Format end time for datetime-local input
+                                var endTimeFormatted = end.toISOString().slice(0, 16);
+                                $('#EndTime').val(endTimeFormatted);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+}

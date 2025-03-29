@@ -1,0 +1,117 @@
+﻿@model IEnumerable<CinemaManagement.Models.Booking>
+@{
+    ViewData["Title"] = "Trang quản trị";
+}
+
+<div class="container py-4">
+    <h2>Tổng quan hệ thống</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Phim</h5>
+                    <p class="card-text display-4">@ViewBag.MovieCount</p>
+                    <a href="@Url.Action("Movies")" class="text-white">Quản lý phim</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Lịch chiếu</h5>
+                    <p class="card-text display-4">@ViewBag.ShowtimeCount</p>
+                    <a href="@Url.Action("Showtimes")" class="text-white">Quản lý lịch chiếu</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Phòng chiếu</h5>
+                    <p class="card-text display-4">@ViewBag.RoomCount</p>
+                    <a href="@Url.Action("Rooms")" class="text-white">Quản lý phòng chiếu</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Khách hàng</h5>
+                    <p class="card-text display-4">@ViewBag.CustomerCount</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Đơn đặt vé mới nhất</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Mã</th>
+                                    <th>Khách hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var booking in Model)
+                                {
+                                    <tr>
+                                        <td>@booking.BookingId</td>
+                                        <td>@booking.Customer?.FullName</td>
+                                        <td>@booking.BookingDate?.ToString("dd/MM/yyyy HH:mm")</td>
+                                        <td>@string.Format("{0:N0} VNĐ", booking.TotalAmount)</td>
+                                        <td>
+                                            @if (booking.BookingStatus == "Confirmed")
+                                            {
+                                                <span class="badge bg-success">Đã xác nhận</span>
+                                            }
+                                            else if (booking.BookingStatus == "Cancelled")
+                                            {
+                                                <span class="badge bg-danger">Đã hủy</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-warning text-dark">Đang xử lý</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Quản lý hệ thống</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-3">
+                        <h6 class="mt-2">Quản lý nội dung</h6>
+                        <a href="@Url.Action("Movies")" class="btn btn-primary">Quản lý phim</a>
+                        <a href="@Url.Action("Showtimes")" class="btn btn-success">Quản lý lịch chiếu</a>
+                        <a href="@Url.Action("Rooms")" class="btn btn-info">Quản lý phòng chiếu</a>
+
+                        <h6 class="mt-3">Báo cáo & Thống kê</h6>
+                        <a href="@Url.Action("Revenue")" class="btn btn-warning">Thống kê doanh thu</a>
+                        <a href="@Url.Action("CustomerReport")" class="btn btn-secondary">Báo cáo lượng khách</a>
+                        <a href="@Url.Action("PopularMovies")" class="btn btn-danger">Phim ăn khách nhất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

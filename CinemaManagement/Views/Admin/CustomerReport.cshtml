@@ -1,0 +1,211 @@
+﻿@{
+    ViewData["Title"] = "Báo cáo lượng khách";
+    var totalCustomers = ViewBag.TotalCustomers;
+    var newCustomers = ViewBag.NewCustomers;
+    var activeCustomers = ViewBag.ActiveCustomers;
+    var topCustomersByOrders = ViewBag.TopCustomersByOrders as List<dynamic>;
+    var topCustomersBySpending = ViewBag.TopCustomersBySpending as List<dynamic>;
+    var customers = ViewBag.Customers as Dictionary<int?, CinemaManagement.Models.Customer>;
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Báo cáo lượng khách</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng số khách hàng</h5>
+                    <p class="display-4">@string.Format("{0:N0}", totalCustomers)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Khách hàng mới (30 ngày)</h5>
+                    <p class="display-4">@string.Format("{0:N0}", newCustomers)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-info text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Khách hàng hoạt động (30 ngày)</h5>
+                    <p class="display-4">@string.Format("{0:N0}", activeCustomers)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Top 10 khách hàng đặt nhiều vé nhất</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Khách hàng</th>
+                                    <th>Số đơn đặt vé</th>
+                                    <th>Tổng chi tiêu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int rank = 1;
+                                }
+                                @foreach (var customer in ViewBag.TopCustomersByOrders)
+                                {
+                                    <tr>
+                                        <td>@rank</td>
+                                        <td>
+                                            <span>@customer.CustomerName</span>
+                                            @if (!string.IsNullOrEmpty(customer.CustomerEmail))
+                                            {
+                                                <small class="d-block text-muted">@customer.CustomerEmail</small>
+                                            }
+                                        </td>
+                                        <td>@customer.BookingCount</td>
+                                        <td>@string.Format("{0:N0} VNĐ", customer.TotalSpent)</td>
+                                    </tr>
+                                    rank++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Top 10 khách hàng chi tiêu nhiều nhất</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Khách hàng</th>
+                                    <th>Tổng chi tiêu</th>
+                                    <th>Số đơn đặt vé</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    rank = 1;
+                                }
+                                @foreach (var customer in ViewBag.TopCustomersBySpending)
+                                {
+                                    <tr>
+                                        <td>@rank</td>
+                                        <td>
+                                            <span>@customer.CustomerName</span>
+                                            @if (!string.IsNullOrEmpty(customer.CustomerEmail))
+                                            {
+                                                <small class="d-block text-muted">@customer.CustomerEmail</small>
+                                            }
+                                        </td>
+                                        <td>@string.Format("{0:N0} VNĐ", customer.TotalSpent)</td>
+                                        <td>@customer.BookingCount</td>
+                                    </tr>
+                                    rank++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Phân tích tỷ lệ khách hàng</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <canvas id="customerStatusChart"></canvas>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <h6>Tỷ lệ khách hàng mới (30 ngày qua)</h6>
+                                <div class="progress" style="height: 30px;">
+                                    @{
+                                        var newCustomerPercentage = totalCustomers > 0 ? (newCustomers * 100.0 / totalCustomers) : 0;
+                                    }
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: @newCustomerPercentage%;"
+                                         aria-valuenow="@newCustomerPercentage" aria-valuemin="0" aria-valuemax="100">
+                                        @string.Format("{0:0.##}%", newCustomerPercentage)
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>Tỷ lệ khách hàng hoạt động (30 ngày qua)</h6>
+                                <div class="progress" style="height: 30px;">
+                                    @{
+                                        var activeCustomerPercentage = totalCustomers > 0 ? (activeCustomers * 100.0 / totalCustomers) : 0;
+                                    }
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: @activeCustomerPercentage%;"
+                                         aria-valuenow="@activeCustomerPercentage" aria-valuemin="0" aria-valuemax="100">
+                                        @string.Format("{0:0.##}%", activeCustomerPercentage)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Chart for customer status
+        var customerCtx = document.getElementById('customerStatusChart').getContext('2d');
+        var customerStatusChart = new Chart(customerCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Khách hàng hoạt động (30 ngày)', 'Khách hàng không hoạt động'],
+                datasets: [{
+                    data: [@activeCustomers, @(totalCustomers - activeCustomers)],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(201, 203, 207, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(201, 203, 207, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                let value = context.raw || 0;
+                                let percentage = ((value / @totalCustomers) * 100).toFixed(2) + '%';
+                                return label + ': ' + value + ' (' + percentage + ')';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

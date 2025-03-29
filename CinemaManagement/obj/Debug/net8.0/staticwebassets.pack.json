@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Content\\images\\movies\\avatar2.jpg"
     },
     {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\catchmeifyoucan.jpg",
+      "PackagePath": "staticwebassets\\Content\\images\\movies\\catchmeifyoucan.jpg"
+    },
+    {
       "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\dune2.jpg",
       "PackagePath": "staticwebassets\\Content\\images\\movies\\dune2.jpg"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\spiritedaway.jpg",
       "PackagePath": "staticwebassets\\Content\\images\\movies\\spiritedaway.jpg"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\thebfg.jpg",
+      "PackagePath": "staticwebassets\\Content\\images\\movies\\thebfg.jpg"
     },
     {
       "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\trangti.jpg",

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<CinemaManagement.Models.Room>
+@{
+    ViewData["Title"] = "Quản lý phòng chiếu";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Quản lý phòng chiếu</h2>
+        <a asp-action="RoomCreate" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Thêm phòng chiếu mới
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover" id="roomTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên phòng</th>
+                            <th>Sức chứa</th>
+                            <th>Số ghế đã tạo</th>
+                            <th>Trạng thái</th>
+                            <th>Mô tả</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.RoomId</td>
+                                <td>@item.Name</td>
+                                <td>@item.Capacity</td>
+                                <td>@item.Seats.Count</td>
+                                <td>
+                                    @switch (item.Status)
+                                    {
+                                        case "Available":
+                                            <span class="badge bg-success">Khả dụng</span>
+                                            break;
+                                        case "Maintenance":
+                                            <span class="badge bg-warning text-dark">Bảo trì</span>
+                                            break;
+                                        case "Unavailable":
+                                            <span class="badge bg-danger">Không khả dụng</span>
+                                            break;
+                                        default:
+                                            <span class="badge bg-secondary">@item.Status</span>
+                                            break;
+                                    }
+                                </td>
+                                <td>@item.Description</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="RoomDetails" asp-route-id="@item.RoomId" class="btn btn-sm btn-outline-info">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a asp-action="RoomEdit" asp-route-id="@item.RoomId" class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a asp-action="RoomDelete" asp-route-id="@item.RoomId" class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#roomTable').DataTable({
+                "order": [[1, "asc"]] // Sort by room name
+            });
+        });
+    </script>
+}

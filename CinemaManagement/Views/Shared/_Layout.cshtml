@@ -28,8 +28,23 @@
                         </li>
                         @if (User.IsInRole("Admin"))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Quản trị</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-gear"></i> Quản trị
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Index">Tổng quan</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><h6 class="dropdown-header">Quản lý nội dung</h6></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Movies">Quản lý phim</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Showtimes">Quản lý lịch chiếu</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Rooms">Quản lý phòng chiếu</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><h6 class="dropdown-header">Báo cáo & Thống kê</h6></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Revenue">Thống kê doanh thu</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="CustomerReport">Báo cáo lượng khách</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="PopularMovies">Phim ăn khách nhất</a></li>
+                                </ul>
                             </li>
                         }
                     </ul>

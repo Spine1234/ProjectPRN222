@@ -1,0 +1,330 @@
+﻿@{
+    ViewData["Title"] = "Phim ăn khách nhất";
+    var topMoviesByTickets = ViewBag.TopMoviesByTickets as List<dynamic>;
+    var topMoviesByRevenue = ViewBag.TopMoviesByRevenue as List<dynamic>;
+    var genreStats = ViewBag.GenreStats as List<dynamic>;
+
+    // Chuẩn bị dữ liệu cho biểu đồ
+    var ticketLabels = string.Join(",", topMoviesByTickets.Select(m => $"'{m.Movie.Title}'"));
+    var ticketData = string.Join(",", topMoviesByTickets.Select(m => m.TicketCount));
+
+    var revenueLabels = string.Join(",", topMoviesByRevenue.Select(m => $"'{m.Movie.Title}'"));
+    var revenueData = string.Join(",", topMoviesByRevenue.Select(m => m.Revenue));
+
+    var genreLabels = string.Join(",", genreStats.Select(g => $"'{g.GenreName}'"));
+    var genreTicketData = string.Join(",", genreStats.Select(g => g.TicketCount));
+    var genreRevenueData = string.Join(",", genreStats.Select(g => g.Revenue));
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Phim ăn khách nhất</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Top 10 phim bán nhiều vé nhất</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="ticketChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Top 10 phim có doanh thu cao nhất</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Thống kê theo thể loại phim</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="genreChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Chi tiết top phim bán nhiều vé nhất</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Phim</th>
+                                    <th>Số vé bán</th>
+                                    <th>Doanh thu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int rank = 1;
+                                }
+                                @foreach (var movie in topMoviesByTickets)
+                                {
+                                    <tr>
+                                        <td>@rank</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="@(string.IsNullOrEmpty(movie.Movie.PosterUrl) ? "/images/no-image.jpg" : movie.Movie.PosterUrl)"
+                                                     class="me-2" alt="@movie.Movie.Title" style="width: 50px; height: 75px; object-fit: cover;">
+                                                <div>
+                                                    <strong>@movie.Movie.Title</strong>
+                                                    <small class="d-block text-muted">@(movie.Movie.ReleaseDate?.ToString("dd/MM/yyyy") ?? "Chưa xác định")</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>@movie.TicketCount</td>
+                                        <td>@string.Format("{0:N0} VNĐ", movie.Revenue)</td>
+                                    </tr>
+                                    rank++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Chi tiết top phim có doanh thu cao nhất</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Phim</th>
+                                    <th>Doanh thu</th>
+                                    <th>Số vé bán</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    rank = 1;
+                                }
+                                @foreach (var movie in topMoviesByRevenue)
+                                {
+                                    <tr>
+                                        <td>@rank</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="@(string.IsNullOrEmpty(movie.Movie.PosterUrl) ? "/images/no-image.jpg" : movie.Movie.PosterUrl)"
+                                                     class="me-2" alt="@movie.Movie.Title" style="width: 50px; height: 75px; object-fit: cover;">
+                                                <div>
+                                                    <strong>@movie.Movie.Title</strong>
+                                                    <small class="d-block text-muted">@(movie.Movie.ReleaseDate?.ToString("dd/MM/yyyy") ?? "Chưa xác định")</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>@string.Format("{0:N0} VNĐ", movie.Revenue)</td>
+                                        <td>@movie.TicketCount</td>
+                                    </tr>
+                                    rank++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Chi tiết theo thể loại phim</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Thể loại</th>
+                                    <th>Số vé bán</th>
+                                    <th>Doanh thu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    rank = 1;
+                                }
+                                @foreach (var genre in genreStats)
+                                {
+                                    <tr>
+                                        <td>@rank</td>
+                                        <td>@genre.GenreName</td>
+                                        <td>@genre.TicketCount</td>
+                                        <td>@string.Format("{0:N0} VNĐ", genre.Revenue)</td>
+                                    </tr>
+                                    rank++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Chart for top movies by tickets
+        var ticketCtx = document.getElementById('ticketChart').getContext('2d');
+        var ticketChart = new Chart(ticketCtx, {
+            type: 'bar',
+            data: {
+                labels: [@Html.Raw(ticketLabels)],
+                datasets: [{
+                    label: 'Số vé bán ra',
+                    data: [@ticketData],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Chart for top movies by revenue
+        var revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        var revenueChart = new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: [@Html.Raw(revenueLabels)],
+                datasets: [{
+                    label: 'Doanh thu (VNĐ)',
+                    data: [@revenueData],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return new Intl.NumberFormat('vi-VN').format(context.parsed.x) + ' VNĐ';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart for genre statistics
+        var genreCtx = document.getElementById('genreChart').getContext('2d');
+        var genreChart = new Chart(genreCtx, {
+            type: 'bar',
+            data: {
+                labels: [@Html.Raw(genreLabels)],
+                datasets: [
+                    {
+                        label: 'Số vé bán ra',
+                        data: [@genreTicketData],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Doanh thu (VNĐ)',
+                        data: [@genreRevenueData],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Số vé bán ra'
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        beginAtZero: true,
+                        grid: {
+                            drawOnChartArea: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Doanh thu (VNĐ)'
+                        },
+                        ticks: {
+                            callback: function (value) {
+                                return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.dataset.label || '';
+                                let value = context.raw || 0;
+                                if (label.includes('Doanh thu')) {
+                                    return label + ': ' + new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                                } else {
+                                    return label + ': ' + value;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

@@ -1,0 +1,120 @@
+﻿@model CinemaManagement.Models.ViewModels.MovieViewModel
+@{
+    ViewData["Title"] = "Chỉnh sửa phim";
+    var selectedGenres = ViewBag.SelectedGenres as List<int> ?? new List<int>();
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Chỉnh sửa phim</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="MovieEdit" method="post">
+                        <input type="hidden" asp-for="MovieId" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="DirectorId" class="form-label"></label>
+                                <select asp-for="DirectorId" class="form-select" asp-items="ViewBag.Directors">
+                                    <option value="">-- Chọn đạo diễn --</option>
+                                </select>
+                                <span asp-validation-for="DirectorId" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Duration" class="form-label"></label>
+                                <input asp-for="Duration" class="form-control" />
+                                <span asp-validation-for="Duration" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="ReleaseDate" class="form-label"></label>
+                                <input asp-for="ReleaseDate" type="date" class="form-control" />
+                                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="EndDate" class="form-label"></label>
+                                <input asp-for="EndDate" type="date" class="form-control" />
+                                <span asp-validation-for="EndDate" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="PosterUrl" class="form-label"></label>
+                            <input asp-for="PosterUrl" class="form-control" />
+                            <span asp-validation-for="PosterUrl" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TrailerUrl" class="form-label"></label>
+                            <input asp-for="TrailerUrl" class="form-control" />
+                            <span asp-validation-for="TrailerUrl" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="Status" class="form-label"></label>
+                                <select asp-for="Status" class="form-select">
+                                    <option value="Coming Soon">Sắp chiếu</option>
+                                    <option value="Now Showing">Đang chiếu</option>
+                                    <option value="Ended">Đã kết thúc</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Rating" class="form-label"></label>
+                                <input asp-for="Rating" class="form-control" />
+                                <span asp-validation-for="Rating" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Thể loại</label>
+                            <div class="row">
+                                @foreach (var genre in ViewBag.Genres)
+                                {
+                                    <div class="col-md-4 mb-2">
+                                        <div class="form-check">
+                                            <input type="checkbox" name="selectedGenres" value="@genre.GenreId"
+                                                   class="form-check-input" id="genre-@genre.GenreId"
+                                            @(selectedGenres.Contains(genre.GenreId) ? "checked" : "") />
+                                            <label class="form-check-label" for="genre-@genre.GenreId">@genre.Name</label>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Movies" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

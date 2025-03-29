@@ -34,6 +34,74 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/CustomerReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3VzdG9tZXJSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/MovieCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/MovieDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/MovieEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/Movies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/PopularMovies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUG9wdWxhck1vdmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/Revenue.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmV2ZW51ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/RoomCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9vbUNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/RoomDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9vbURlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/RoomDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9vbURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/RoomEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9vbUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/Rooms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9vbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/ShowtimeCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hvd3RpbWVDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/ShowtimeDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hvd3RpbWVEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/ShowtimeEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hvd3RpbWVFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Admin/Showtimes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hvd3RpbWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/FPT/Term 7/PRN222/Solution/CinemaManagement/CinemaManagement/Views/Booking/Confirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDb25maXJtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

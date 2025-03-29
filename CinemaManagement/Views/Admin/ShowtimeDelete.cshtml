@@ -1,0 +1,44 @@
+﻿@model CinemaManagement.Models.Showtime
+@{
+    ViewData["Title"] = "Xóa lịch chiếu";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3>Xác nhận xóa lịch chiếu</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        Bạn có chắc chắn muốn xóa lịch chiếu này không? Hành động này không thể hoàn tác.
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Thông tin lịch chiếu</h5>
+                            <p>
+                                <strong>Phim:</strong> @Model.Movie?.Title<br />
+                                <strong>Phòng chiếu:</strong> @Model.Room?.Name<br />
+                                <strong>Thời gian bắt đầu:</strong> @Model.StartTime.ToString("dd/MM/yyyy HH:mm")<br />
+                                <strong>Thời gian kết thúc:</strong> @Model.EndTime.ToString("dd/MM/yyyy HH:mm")<br />
+                                <strong>Giá vé cơ bản:</strong> @string.Format("{0:N0} VND", Model.BasePrice)<br />
+                                <strong>Trạng thái:</strong> @Model.Status
+                            </p>
+                        </div>
+                    </div>
+
+                    <form asp-action="ShowtimeDelete" method="post">
+                        <input type="hidden" asp-for="ShowtimeId" />
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Showtimes" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

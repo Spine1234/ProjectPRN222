@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BSZlxoBw2aA16MweOSUm6ZQc/58vrXz3PSkeitn32x4=",
+  "Hash": "p0gGXbH6TuKHSDUQeW+cWeZQszvzoVOkE+SE3Aq74bI=",
   "Source": "CinemaManagement",
   "BasePath": "_content/CinemaManagement",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Content\\images\\movies\\avatar2.jpg"
+    },
+    {
+      "Identity": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\catchmeifyoucan.jpg",
+      "SourceId": "CinemaManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\",
+      "BasePath": "_content/CinemaManagement",
+      "RelativePath": "Content/images/movies/catchmeifyoucan.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\images\\movies\\catchmeifyoucan.jpg"
     },
     {
       "Identity": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\dune2.jpg",
@@ -224,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Content\\images\\movies\\spiritedaway.jpg"
+    },
+    {
+      "Identity": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\thebfg.jpg",
+      "SourceId": "CinemaManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\",
+      "BasePath": "_content/CinemaManagement",
+      "RelativePath": "Content/images/movies/thebfg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\images\\movies\\thebfg.jpg"
     },
     {
       "Identity": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\Content\\images\\movies\\trangti.jpg",

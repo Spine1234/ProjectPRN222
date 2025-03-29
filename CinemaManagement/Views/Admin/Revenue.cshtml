@@ -1,0 +1,256 @@
+﻿@{
+    ViewData["Title"] = "Thống kê doanh thu";
+    var dailyRevenue = ViewBag.DailyRevenue as List<dynamic> ?? new List<dynamic>();
+    var monthlyRevenue = ViewBag.MonthlyRevenue as List<dynamic> ?? new List<dynamic>();
+    var paymentMethodRevenue = ViewBag.PaymentMethodRevenue as List<dynamic> ?? new List<dynamic>();
+    var totalRevenue = ViewBag.TotalRevenue ?? 0;
+    var totalBookings = ViewBag.TotalBookings ?? 0;
+    var averageBookingValue = ViewBag.AverageBookingValue ?? 0;
+
+    // Tạo dữ liệu cho biểu đồ - kiểm tra và bảo vệ chống null
+    var dailyLabels = dailyRevenue.Any()
+        ? string.Join(",", dailyRevenue.Select(d => $"'{d.Date.ToString("dd/MM")}'"))
+        : "";
+
+    var dailyData = dailyRevenue.Any()
+        ? string.Join(",", dailyRevenue.Select(d => d.Revenue))
+        : "";
+
+    var monthNames = new[] { "", "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12" };
+    var monthlyLabels = monthlyRevenue.Any()
+        ? string.Join(",", monthlyRevenue.Select(m => $"'{monthNames[m.Month]}'"))
+        : "";
+
+    var monthlyData = monthlyRevenue.Any()
+        ? string.Join(",", monthlyRevenue.Select(m => m.Revenue))
+        : "";
+
+    var paymentLabels = paymentMethodRevenue.Any()
+        ? string.Join(",", paymentMethodRevenue.Select(p => $"'{p.PaymentMethod}'"))
+        : "";
+
+    var paymentData = paymentMethodRevenue.Any()
+        ? string.Join(",", paymentMethodRevenue.Select(p => p.Revenue))
+        : "";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Thống kê doanh thu</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng doanh thu</h5>
+                    <p class="display-4">@string.Format("{0:N0} VNĐ", totalRevenue)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng số đơn đặt vé</h5>
+                    <p class="display-4">@string.Format("{0:N0}", totalBookings)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-info text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Giá trị đơn hàng trung bình</h5>
+                    <p class="display-4">@string.Format("{0:N0} VNĐ", averageBookingValue)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Doanh thu 30 ngày gần nhất</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="dailyRevenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Doanh thu theo tháng</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="monthlyRevenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Doanh thu theo phương thức thanh toán</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="paymentMethodChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Chi tiết doanh thu theo phương thức thanh toán</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Phương thức thanh toán</th>
+                                    <th>Số lượng đơn</th>
+                                    <th>Doanh thu</th>
+                                    <th>Tỷ lệ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var payment in paymentMethodRevenue)
+                                {
+                                    <tr>
+                                        <td>@payment.PaymentMethod</td>
+                                        <td>@payment.Count</td>
+                                        <td>@string.Format("{0:N0} VNĐ", payment.Revenue)</td>
+                                        <td>@string.Format("{0:P2}", payment.Revenue / totalRevenue)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Chart for daily revenue
+        var dailyCtx = document.getElementById('dailyRevenueChart').getContext('2d');
+        var dailyRevenueChart = new Chart(dailyCtx, {
+            type: 'line',
+            data: {
+                labels: [@(string.IsNullOrEmpty(dailyLabels) ? "" : Html.Raw(dailyLabels))],
+                datasets: [{
+                    label: 'Doanh thu (VNĐ)',
+                    data: [@(string.IsNullOrEmpty(dailyData) ? "" : Html.Raw(dailyData))],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return new Intl.NumberFormat('vi-VN').format(context.parsed.y) + ' VNĐ';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart for monthly revenue
+        var monthlyCtx = document.getElementById('monthlyRevenueChart').getContext('2d');
+        var monthlyRevenueChart = new Chart(monthlyCtx, {
+            type: 'bar',
+            data: {
+                labels: [@Html.Raw(monthlyLabels)],
+                datasets: [{
+                    label: 'Doanh thu (VNĐ)',
+                    data: [@monthlyData],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return new Intl.NumberFormat('vi-VN').format(context.parsed.y) + ' VNĐ';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart for payment method revenue
+        var paymentCtx = document.getElementById('paymentMethodChart').getContext('2d');
+        var paymentMethodChart = new Chart(paymentCtx, {
+            type: 'pie',
+            data: {
+                labels: [@Html.Raw(paymentLabels)],
+                datasets: [{
+                    data: [@paymentData],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                let value = context.raw || 0;
+                                let percentage = ((value / @totalRevenue) * 100).toFixed(2) + '%';
+                                return label + ': ' + new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ (' + percentage + ')';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

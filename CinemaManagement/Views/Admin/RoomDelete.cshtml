@@ -1,0 +1,43 @@
+﻿@model CinemaManagement.Models.Room
+@{
+    ViewData["Title"] = "Xóa phòng chiếu";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3>Xác nhận xóa phòng chiếu</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        Bạn có chắc chắn muốn xóa phòng chiếu này không? Hành động này không thể hoàn tác.
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Thông tin phòng chiếu</h5>
+                            <p>
+                                <strong>Tên phòng:</strong> @Model.Name<br />
+                                <strong>Sức chứa:</strong> @Model.Capacity chỗ ngồi<br />
+                                <strong>Số ghế đã tạo:</strong> @Model.Seats.Count ghế<br />
+                                <strong>Trạng thái:</strong> @Model.Status<br />
+                                <strong>Mô tả:</strong> @Model.Description
+                            </p>
+                        </div>
+                    </div>
+
+                    <form asp-action="RoomDelete" method="post">
+                        <input type="hidden" asp-for="RoomId" />
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Rooms" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

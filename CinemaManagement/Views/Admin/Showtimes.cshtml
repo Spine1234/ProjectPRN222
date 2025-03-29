@@ -1,0 +1,100 @@
+﻿@model IEnumerable<CinemaManagement.Models.Showtime>
+@{
+    ViewData["Title"] = "Quản lý lịch chiếu";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Quản lý lịch chiếu</h2>
+        <a asp-action="ShowtimeCreate" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Thêm lịch chiếu mới
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover" id="showtimeTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Phim</th>
+                            <th>Phòng</th>
+                            <th>Bắt đầu</th>
+                            <th>Kết thúc</th>
+                            <th>Giá vé</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ShowtimeId</td>
+                                <td>@item.Movie?.Title</td>
+                                <td>@item.Room?.Name</td>
+                                <td>@item.StartTime.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td>@item.EndTime.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td>@string.Format("{0:N0} VND", item.BasePrice)</td>
+                                <td>
+                                    @switch (item.Status)
+                                    {
+                                        case "Scheduled":
+                                            <span class="badge bg-primary">Đã lên lịch</span>
+                                            break;
+                                        case "Cancelled":
+                                            <span class="badge bg-danger">Đã hủy</span>
+                                            break;
+                                        case "Completed":
+                                            <span class="badge bg-success">Đã chiếu</span>
+                                            break;
+                                        default:
+                                            <span class="badge bg-secondary">@item.Status</span>
+                                            break;
+                                    }
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="ShowtimeEdit" asp-route-id="@item.ShowtimeId" class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a asp-action="ShowtimeDelete" asp-route-id="@item.ShowtimeId" class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#showtimeTable').DataTable({
+                "order": [[3, "asc"]] // Sort by start time
+            });
+        });
+    </script>
+}
