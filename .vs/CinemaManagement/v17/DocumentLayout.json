@@ -3,31 +3,39 @@
   "WorkspaceRootPath": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\revenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\revenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\customerreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\customerreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\dailyreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\dailyreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\monthlyreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\monthlyreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\popularmovies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\admin\\popularmovies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\popularmovies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\movieedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|d:\\fpt\\term 7\\prn222\\solution\\cinemamanagement\\cinemamanagement\\views\\admin\\revenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\revenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\admin\\customerreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\customerreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\cinemamanagement\\views\\admin\\movieedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12329FD5-1859-4C20-950E-88AFF8750C33}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\views\\admin\\movieedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -210,7 +218,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 192,
+          "SelectedChildIndex": 199,
           "Children": [
             {
               "$type": "Bookmark",
@@ -966,28 +974,67 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:10:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:8:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "MonthlyReport.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\MonthlyReport.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\MonthlyReport.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\MonthlyReport.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Admin\\MonthlyReport.cshtml",
+              "ViewState": "AQIAAGUBAAAAAAAAAAAUwJwBAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T16:29:24.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DailyReport.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\DailyReport.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\DailyReport.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\DailyReport.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Admin\\DailyReport.cshtml",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAmwCMBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T16:28:57.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Revenue.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Revenue.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Revenue.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Revenue.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Admin\\Revenue.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAADEAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T10:50:54.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PopularMovies.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\PopularMovies.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\PopularMovies.cshtml",
               "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\PopularMovies.cshtml",
               "RelativeToolTip": "CinemaManagement\\Views\\Admin\\PopularMovies.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAkwG4AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-29T10:52:34.025Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "CustomerReport.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\CustomerReport.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\CustomerReport.cshtml",
@@ -995,25 +1042,11 @@
               "RelativeToolTip": "CinemaManagement\\Views\\Admin\\CustomerReport.cshtml",
               "ViewState": "AQIAAGAAAAAAAAAAAAAAAHYAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-29T10:51:55.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T10:51:55.302Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Revenue.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Revenue.cshtml",
-              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Revenue.cshtml",
-              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Revenue.cshtml*",
-              "RelativeToolTip": "CinemaManagement\\Views\\Admin\\Revenue.cshtml*",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAAAJoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-29T10:50:54.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "MovieEdit.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\MovieEdit.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\MovieEdit.cshtml",
@@ -1021,12 +1054,11 @@
               "RelativeToolTip": "CinemaManagement\\Views\\Admin\\MovieEdit.cshtml",
               "ViewState": "AQIAACcAAAAAAAAAAAAAAEAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T07:26:01.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T07:26:01.955Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "RoomCreate.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\RoomCreate.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\RoomCreate.cshtml",
@@ -1038,7 +1070,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Rooms.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Rooms.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Rooms.cshtml",
@@ -1050,20 +1082,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\AdminController.cs",
               "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AdminController.cs",
               "RelativeToolTip": "CinemaManagement\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAHsDAAAAAAAAAAAkwIYDAAAoAAAA",
+              "ViewState": "AQIAACkEAAAAAAAAAAAwwJ0EAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T16:12:55.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAmwF8AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T16:19:03.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "CinemaManagement\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAI4AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-27T07:24:22.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "RoomDetails.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\RoomDetails.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\RoomDetails.cshtml",
@@ -1075,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ShowtimeDelete.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\ShowtimeDelete.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\ShowtimeDelete.cshtml",
@@ -1087,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "MovieViewModel.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\MovieViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\MovieViewModel.cs",
@@ -1095,38 +1153,11 @@
               "RelativeToolTip": "CinemaManagement\\Models\\ViewModels\\MovieViewModel.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAwwBwAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T07:22:03.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T07:22:03.353Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Index.cshtml",
-              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Index.cshtml",
-              "RelativeToolTip": "CinemaManagement\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHQAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T07:24:22.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CinemaManagement\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CinemaManagement\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAwCgAAABhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-24T16:19:03.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "MovieCreate.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\MovieCreate.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\MovieCreate.cshtml",
@@ -1134,12 +1165,11 @@
               "RelativeToolTip": "CinemaManagement\\Views\\Admin\\MovieCreate.cshtml",
               "ViewState": "AQIAACEAAAAAAAAAAAAAAD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-27T07:25:34.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T07:25:34.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "RoomEdit.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\RoomEdit.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\RoomEdit.cshtml",
@@ -1151,7 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "RoomDelete.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\RoomDelete.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\RoomDelete.cshtml",
@@ -1163,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ShowtimeEdit.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\ShowtimeEdit.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\ShowtimeEdit.cshtml",
@@ -1175,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ShowtimeCreate.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\ShowtimeCreate.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\ShowtimeCreate.cshtml",
@@ -1187,7 +1217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Showtimes.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Showtimes.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Showtimes.cshtml",
@@ -1199,7 +1229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "MovieDelete.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\MovieDelete.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\MovieDelete.cshtml",
@@ -1211,7 +1241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Movies.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Admin\\Movies.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Admin\\Movies.cshtml",
@@ -1223,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "RoomViewModel.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\RoomViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\RoomViewModel.cs",
@@ -1235,7 +1265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "ShowtimeViewModel.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\ShowtimeViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\ShowtimeViewModel.cs",
@@ -1247,7 +1277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\LoginViewModel.cs",
@@ -1259,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\AccountController.cs",
@@ -1271,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\Edit.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\Edit.cshtml",
@@ -1283,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "BookingHistory.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\BookingHistory.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\BookingHistory.cshtml",
@@ -1295,7 +1325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\Index.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\Index.cshtml",
@@ -1307,7 +1337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\ProfileController.cs",
@@ -1319,7 +1349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "MoviesController.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\MoviesController.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\MoviesController.cs",
@@ -1331,7 +1361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\appsettings.json",
               "RelativeDocumentMoniker": "CinemaManagement\\appsettings.json",
@@ -1343,7 +1373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "SelectSeats.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\SelectSeats.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\SelectSeats.cshtml",
@@ -1355,7 +1385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "site.css",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "CinemaManagement\\wwwroot\\css\\site.css",
@@ -1367,7 +1397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "ViewTicket.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Profile\\ViewTicket.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Profile\\ViewTicket.cshtml",
@@ -1379,7 +1409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\RegisterViewModel.cs",
@@ -1391,7 +1421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "RecentBookingsViewComponent.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\ViewComponents\\RecentBookingsViewComponent.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\ViewComponents\\RecentBookingsViewComponent.cs",
@@ -1403,7 +1433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Default.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Shared\\Components\\RecentBookings\\Default.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Shared\\Components\\RecentBookings\\Default.cshtml",
@@ -1415,7 +1445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "Booking.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\Booking.cs",
@@ -1427,7 +1457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "Success.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Success.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\Success.cshtml",
@@ -1439,7 +1469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\HomeController.cs",
@@ -1451,7 +1481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Program.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Program.cs",
@@ -1463,7 +1493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "BookingController.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Controllers\\BookingController.cs",
@@ -1475,7 +1505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\_ViewImports.cshtml",
@@ -1487,7 +1517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Index.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\Index.cshtml",
@@ -1499,7 +1529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "Confirm.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Booking\\Confirm.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Booking\\Confirm.cshtml",
@@ -1511,7 +1541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Account\\Register.cshtml",
@@ -1523,7 +1553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Movies\\Index.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Movies\\Index.cshtml",
@@ -1535,7 +1565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Account\\Login.cshtml",
@@ -1547,7 +1577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Movies\\Details.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Movies\\Details.cshtml",
@@ -1559,7 +1589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 50,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CinemaManagement\\Views\\Home\\Index.cshtml",
@@ -1571,7 +1601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 51,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\Models\\ViewModels\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\ViewModels\\ErrorViewModel.cs",

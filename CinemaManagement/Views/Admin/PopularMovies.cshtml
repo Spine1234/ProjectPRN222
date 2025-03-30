@@ -1,21 +1,38 @@
 ﻿@{
     ViewData["Title"] = "Phim ăn khách nhất";
-    var topMoviesByTickets = ViewBag.TopMoviesByTickets as List<dynamic>;
-    var topMoviesByRevenue = ViewBag.TopMoviesByRevenue as List<dynamic>;
-    var genreStats = ViewBag.GenreStats as List<dynamic>;
+    var topMoviesByTickets = ViewBag.TopMoviesByTickets as List<dynamic> ?? new List<dynamic>();
+    var topMoviesByRevenue = ViewBag.TopMoviesByRevenue as List<dynamic> ?? new List<dynamic>();
+    var genreStats = ViewBag.GenreStats as List<dynamic> ?? new List<dynamic>();
 
-    // Chuẩn bị dữ liệu cho biểu đồ
-    var ticketLabels = string.Join(",", topMoviesByTickets.Select(m => $"'{m.Movie.Title}'"));
-    var ticketData = string.Join(",", topMoviesByTickets.Select(m => m.TicketCount));
+    // Chuẩn bị dữ liệu cho biểu đồ - kiểm tra và bảo vệ chống null
+    var ticketLabels = topMoviesByTickets.Any()
+        ? string.Join(",", topMoviesByTickets.Select(m => $"'{m.Movie.Title}'"))
+        : "";
 
-    var revenueLabels = string.Join(",", topMoviesByRevenue.Select(m => $"'{m.Movie.Title}'"));
-    var revenueData = string.Join(",", topMoviesByRevenue.Select(m => m.Revenue));
+    var ticketData = topMoviesByTickets.Any()
+        ? string.Join(",", topMoviesByTickets.Select(m => m.TicketCount))
+        : "";
 
-    var genreLabels = string.Join(",", genreStats.Select(g => $"'{g.GenreName}'"));
-    var genreTicketData = string.Join(",", genreStats.Select(g => g.TicketCount));
-    var genreRevenueData = string.Join(",", genreStats.Select(g => g.Revenue));
+    var revenueLabels = topMoviesByRevenue.Any()
+        ? string.Join(",", topMoviesByRevenue.Select(m => $"'{m.Movie.Title}'"))
+        : "";
+
+    var revenueData = topMoviesByRevenue.Any()
+        ? string.Join(",", topMoviesByRevenue.Select(m => m.Revenue))
+        : "";
+
+    var genreLabels = genreStats.Any()
+        ? string.Join(",", genreStats.Select(g => $"'{g.GenreName}'"))
+        : "";
+
+    var genreTicketData = genreStats.Any()
+        ? string.Join(",", genreStats.Select(g => g.TicketCount))
+        : "";
+
+    var genreRevenueData = genreStats.Any()
+        ? string.Join(",", genreStats.Select(g => g.Revenue))
+        : "";
 }
-
 <div class="container py-4">
     <h2 class="mb-4">Phim ăn khách nhất</h2>
 
@@ -76,24 +93,33 @@
                                 @{
                                     int rank = 1;
                                 }
-                                @foreach (var movie in topMoviesByTickets)
+                                @if (topMoviesByTickets.Any())
+                                {
+                                    @foreach (var movie in topMoviesByTickets)
+                                    {
+                                        <tr>
+                                            <td>@rank</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="@(string.IsNullOrEmpty(movie.Movie?.PosterUrl) ? "/images/no-image.jpg" : movie.Movie.PosterUrl)"
+                                                         class="me-2" alt="@movie.Movie?.Title" style="width: 50px; height: 75px; object-fit: cover;">
+                                                    <div>
+                                                        <strong>@movie.Movie?.Title</strong>
+                                                        <small class="d-block text-muted">@(movie.Movie?.ReleaseDate?.ToString("dd/MM/yyyy") ?? "Chưa xác định")</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>@movie.TicketCount</td>
+                                            <td>@string.Format("{0:N0} VNĐ", movie.Revenue)</td>
+                                        </tr>
+                                        rank++;
+                                    }
+                                }
+                                else
                                 {
                                     <tr>
-                                        <td>@rank</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="@(string.IsNullOrEmpty(movie.Movie.PosterUrl) ? "/images/no-image.jpg" : movie.Movie.PosterUrl)"
-                                                     class="me-2" alt="@movie.Movie.Title" style="width: 50px; height: 75px; object-fit: cover;">
-                                                <div>
-                                                    <strong>@movie.Movie.Title</strong>
-                                                    <small class="d-block text-muted">@(movie.Movie.ReleaseDate?.ToString("dd/MM/yyyy") ?? "Chưa xác định")</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>@movie.TicketCount</td>
-                                        <td>@string.Format("{0:N0} VNĐ", movie.Revenue)</td>
+                                        <td colspan="4" class="text-center">Không có dữ liệu</td>
                                     </tr>
-                                    rank++;
                                 }
                             </tbody>
                         </table>
@@ -196,10 +222,10 @@
         var ticketChart = new Chart(ticketCtx, {
             type: 'bar',
             data: {
-                labels: [@Html.Raw(ticketLabels)],
+                labels: [@(string.IsNullOrEmpty(ticketLabels) ? "" : Html.Raw(ticketLabels))],
                 datasets: [{
                     label: 'Số vé bán ra',
-                    data: [@ticketData],
+                    data: [@(string.IsNullOrEmpty(ticketData) ? "" : ticketData)],
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1

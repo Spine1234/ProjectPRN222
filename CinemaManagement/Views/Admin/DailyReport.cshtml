@@ -1,0 +1,294 @@
+﻿@{
+    ViewData["Title"] = "Báo cáo theo ngày";
+    var startDate = ViewBag.StartDate;
+    var endDate = ViewBag.EndDate;
+    var dailyTickets = ViewBag.DailyTickets as List<dynamic> ?? new List<dynamic>();
+    var totalTickets = ViewBag.TotalTickets;
+    var totalRevenue = ViewBag.TotalRevenue;
+    var avgDailyRevenue = ViewBag.AverageDailyRevenue;
+    var topMovies = ViewBag.TopMovies as List<dynamic> ?? new List<dynamic>();
+
+    // Chuẩn bị dữ liệu cho biểu đồ
+    var dates = dailyTickets.Any() ? string.Join(",", dailyTickets.Select(d => $"'{d.Date.ToString("dd/MM")}'")) : "";
+    var ticketCounts = dailyTickets.Any() ? string.Join(",", dailyTickets.Select(d => d.TicketCount)) : "";
+    var revenues = dailyTickets.Any() ? string.Join(",", dailyTickets.Select(d => d.Revenue)) : "";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Báo cáo thống kê theo ngày</h2>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5>Chọn khoảng thời gian</h5>
+        </div>
+        <div class="card-body">
+            <form method="get" id="dateRangeForm" class="row g-3">
+                <div class="col-md-4">
+                    <label for="startDate" class="form-label">Từ ngày</label>
+                    <input type="date" class="form-control" id="startDate" name="startDate" value="@startDate.ToString("yyyy-MM-dd")">
+                </div>
+                <div class="col-md-4">
+                    <label for="endDate" class="form-label">Đến ngày</label>
+                    <input type="date" class="form-control" id="endDate" name="endDate" value="@endDate.ToString("yyyy-MM-dd")">
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Áp dụng</button>
+                    <button type="button" class="btn btn-outline-secondary ms-2" id="btnLastWeek">7 ngày</button>
+                    <button type="button" class="btn btn-outline-secondary ms-2" id="btnLastMonth">30 ngày</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng số vé đã bán</h5>
+                    <p class="display-4">@string.Format("{0:N0}", totalTickets)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng doanh thu</h5>
+                    <p class="display-4">@string.Format("{0:N0} VNĐ", totalRevenue)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-info text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Doanh thu trung bình/ngày</h5>
+                    <p class="display-4">@string.Format("{0:N0} VNĐ", avgDailyRevenue)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Biểu đồ doanh thu theo ngày</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Số liệu chi tiết theo ngày</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="dailyDataTable">
+                            <thead>
+                                <tr>
+                                    <th>Ngày</th>
+                                    <th>Số vé</th>
+                                    <th>Doanh thu</th>
+                                    <th>Suất chiếu</th>
+                                    <th>Phim</th>
+                                    <th>Khách hàng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (dailyTickets.Any())
+                                {
+                                    foreach (var day in dailyTickets)
+                                    {
+                                        <tr>
+                                            <td>@day.Date.ToString("dd/MM/yyyy")</td>
+                                            <td>@day.TicketCount</td>
+                                            <td>@string.Format("{0:N0} VNĐ", day.Revenue)</td>
+                                            <td>@day.ShowtimeCount</td>
+                                            <td>@day.MovieCount</td>
+                                            <td>@day.CustomerCount</td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="6" class="text-center">Không có dữ liệu</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Top phim bán chạy</h5>
+                </div>
+                <div class="card-body">
+                    @if (topMovies.Any())
+                    {
+                        <div class="list-group">
+                            @foreach (var movie in topMovies)
+                            {
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">@movie.Title</h6>
+                                        <small class="text-muted">@string.Format("{0:N0} VNĐ", movie.Revenue)</small>
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">@movie.TicketCount vé</span>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-center">Không có dữ liệu</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Khởi tạo bảng dữ liệu
+            $('#dailyDataTable').DataTable({
+                order: [[0, 'desc']],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/vi.json'
+                }
+            });
+
+            // Xử lý nút chọn nhanh khoảng thời gian
+            $('#btnLastWeek').click(function () {
+                var endDate = new Date();
+                var startDate = new Date();
+                startDate.setDate(endDate.getDate() - 7);
+
+                $('#startDate').val(formatDate(startDate));
+                $('#endDate').val(formatDate(endDate));
+                $('#dateRangeForm').submit();
+            });
+
+            $('#btnLastMonth').click(function () {
+                var endDate = new Date();
+                var startDate = new Date();
+                startDate.setDate(endDate.getDate() - 30);
+
+                $('#startDate').val(formatDate(startDate));
+                $('#endDate').val(formatDate(endDate));
+                $('#dateRangeForm').submit();
+            });
+
+            function formatDate(date) {
+                var d = new Date(date),
+                    month = '' + (d.getMonth() + 1),
+                    day = '' + d.getDate(),
+                    year = d.getFullYear();
+
+                if (month.length < 2) month = '0' + month;
+                if (day.length < 2) day = '0' + day;
+
+                return [year, month, day].join('-');
+            }
+
+            // Chart for revenue
+            var revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            var revenueChart = new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: [@Html.Raw(dates)],
+                    datasets: [
+                        {
+                            label: 'Doanh thu (VNĐ)',
+                            data: [@revenues],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Số vé bán ra',
+                            data: [@ticketCounts],
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Doanh thu (VNĐ)'
+                            },
+                            ticks: {
+                                callback: function (value) {
+                                    return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                                }
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Số vé'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.dataset.label || '';
+                                    let value = context.raw || 0;
+                                    if (label.includes('Doanh thu')) {
+                                        return label + ': ' + new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                                    } else {
+                                        return label + ': ' + value;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+}

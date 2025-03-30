@@ -282,3 +282,4 @@ D:\FPT\Term 7\PRN222\Solution\CinemaManagement\CinemaManagement\bin\Debug\net8.0
 D:\FPT\Term 7\PRN222\Solution\CinemaManagement\CinemaManagement\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 D:\FPT\Term 7\PRN222\Solution\CinemaManagement\CinemaManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\FPT\Term 7\PRN222\Solution\CinemaManagement\CinemaManagement\obj\Debug\net8.0\CinemaManagement.sourcelink.json
+D:\FPT\Term 7\PRN222\Solution\CinemaManagement\CinemaManagement\bin\Debug\net8.0\libman.json

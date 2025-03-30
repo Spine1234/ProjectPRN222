@@ -106,9 +106,35 @@
                         <a href="@Url.Action("Rooms")" class="btn btn-info">Quản lý phòng chiếu</a>
 
                         <h6 class="mt-3">Báo cáo & Thống kê</h6>
-                        <a href="@Url.Action("Revenue")" class="btn btn-warning">Thống kê doanh thu</a>
-                        <a href="@Url.Action("CustomerReport")" class="btn btn-secondary">Báo cáo lượng khách</a>
-                        <a href="@Url.Action("PopularMovies")" class="btn btn-danger">Phim ăn khách nhất</a>
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <a href="@Url.Action("Revenue")" class="btn btn-warning w-100">
+                                    <i class="bi bi-bar-chart-line"></i> Doanh thu
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="@Url.Action("CustomerReport")" class="btn btn-secondary w-100">
+                                    <i class="bi bi-people"></i> Lượng khách
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="@Url.Action("PopularMovies")" class="btn btn-danger w-100">
+                                    <i class="bi bi-film"></i> Phim hot
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <a href="@Url.Action("DailyReport")" class="btn btn-info text-white w-100">
+                                    <i class="bi bi-calendar-day"></i> Báo cáo ngày
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="@Url.Action("MonthlyReport")" class="btn btn-primary w-100">
+                                    <i class="bi bi-calendar-month"></i> Báo cáo tháng
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

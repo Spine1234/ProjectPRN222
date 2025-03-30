@@ -65,6 +65,62 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.cjs.map",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.cjs.map"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.js",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.js"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.js.map",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.js.map"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.min.js",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.min.js"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.umd.js",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.umd.js"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.umd.js.map",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.umd.js.map"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\chart.umd.min.js",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\chart.umd.min.js"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\helpers.cjs.map",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\helpers.cjs.map"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\helpers.js",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\helpers.js"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\helpers.js.map",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\helpers.js.map"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\helpers.min.js",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\helpers.min.js"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\index.d.ts",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\index.d.ts"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\index.umd.d.ts",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\index.umd.d.ts"
+    },
+    {
+      "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\Chart.js\\types.d.ts",
+      "PackagePath": "staticwebassets\\lib\\Chart.js\\types.d.ts"
+    },
+    {
       "Id": "D:\\FPT\\Term 7\\PRN222\\Solution\\CinemaManagement\\CinemaManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

@@ -931,63 +931,254 @@ namespace CinemaManagement.Controllers
         // Phương thức báo cáo phim ăn khách nhất
         public async Task<IActionResult> PopularMovies()
         {
-            // Lấy phim bán nhiều vé nhất
-            var topMoviesByTickets = await _context.Tickets
-                .Include(t => t.Showtime)
-                    .ThenInclude(s => s.Movie)
-                .Where(t => t.Status != "Cancelled" && t.Showtime.Movie != null)
-                .GroupBy(t => t.Showtime.MovieId)
-                .Select(g => new
+            try
+            {
+                // Lấy phim bán nhiều vé nhất
+                var topMoviesByTickets = await _context.Tickets
+                    .Include(t => t.Showtime)
+                        .ThenInclude(s => s.Movie)
+                    .Where(t => t.Status != "Cancelled" && t.Showtime.Movie != null)
+                    .GroupBy(t => t.Showtime.MovieId)
+                    .Select(g => new
+                    {
+                        MovieId = g.Key,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(t => t.Price),
+                        Movie = g.FirstOrDefault().Showtime.Movie
+                    })
+                    .OrderByDescending(x => x.TicketCount)
+                    .Take(10)
+                    .ToListAsync();
+
+                // Lấy phim có doanh thu cao nhất
+                var topMoviesByRevenue = await _context.Tickets
+                    .Include(t => t.Showtime)
+                        .ThenInclude(s => s.Movie)
+                    .Where(t => t.Status != "Cancelled" && t.Showtime.Movie != null)
+                    .GroupBy(t => t.Showtime.MovieId)
+                    .Select(g => new
+                    {
+                        MovieId = g.Key,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(t => t.Price),
+                        Movie = g.FirstOrDefault().Showtime.Movie
+                    })
+                    .OrderByDescending(x => x.Revenue)
+                    .Take(10)
+                    .ToListAsync();
+
+                // Thống kê theo thể loại
+                var genreStats = await _context.Tickets
+                    .Include(t => t.Showtime)
+                        .ThenInclude(s => s.Movie)
+                            .ThenInclude(m => m.Genres)
+                    .Where(t => t.Status != "Cancelled" && t.Showtime.Movie != null && t.Showtime.Movie.Genres.Any())
+                    .SelectMany(t => t.Showtime.Movie.Genres.Select(g => new { GenreId = g.GenreId, GenreName = g.Name, Price = t.Price }))
+                    .GroupBy(x => new { x.GenreId, x.GenreName })
+                    .Select(g => new
+                    {
+                        GenreId = g.Key.GenreId,
+                        GenreName = g.Key.GenreName,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(x => x.Price)
+                    })
+                    .OrderByDescending(x => x.TicketCount)
+                    .ToListAsync();
+
+                // Gán trực tiếp cho ViewBag
+                ViewBag.TopMoviesByTickets = topMoviesByTickets;
+                ViewBag.TopMoviesByRevenue = topMoviesByRevenue;
+                ViewBag.GenreStats = genreStats;
+
+                // Kiểm tra có dữ liệu không
+                ViewBag.HasData = (
+                    (topMoviesByTickets != null && topMoviesByTickets.Any()) ||
+                    (topMoviesByRevenue != null && topMoviesByRevenue.Any()) ||
+                    (genreStats != null && genreStats.Any())
+                );
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi
+                Console.WriteLine($"Lỗi khi tạo báo cáo phim ăn khách: {ex.Message}");
+
+                // Cung cấp các danh sách rỗng cho view
+                ViewBag.TopMoviesByTickets = new List<object>();
+                ViewBag.TopMoviesByRevenue = new List<object>();
+                ViewBag.GenreStats = new List<object>();
+                ViewBag.HasData = false;
+                ViewBag.ErrorMessage = "Đã xảy ra lỗi khi tải dữ liệu báo cáo phim. Vui lòng thử lại sau.";
+
+                return View();
+            }
+        }
+
+        // Báo cáo thống kê theo ngày
+        public async Task<IActionResult> DailyReport(DateTime? startDate, DateTime? endDate)
+        {
+            try
+            {
+                // Mặc định là ngày hôm nay nếu không có giá trị
+                var today = DateTime.Today;
+                var start = startDate ?? today.AddDays(-30);
+                var end = endDate ?? today;
+
+                // Đảm bảo ngày bắt đầu nhỏ hơn ngày kết thúc
+                if (start > end)
                 {
-                    MovieId = g.Key,
-                    TicketCount = g.Count(),
-                    Revenue = g.Sum(t => t.Price),
-                    Movie = g.FirstOrDefault().Showtime.Movie
-                })
-                .OrderByDescending(x => x.TicketCount)
-                .Take(10)
-                .ToListAsync();
+                    var temp = start;
+                    start = end;
+                    end = temp;
+                }
 
-            // Lấy phim có doanh thu cao nhất
-            var topMoviesByRevenue = await _context.Tickets
-                .Include(t => t.Showtime)
-                    .ThenInclude(s => s.Movie)
-                .Where(t => t.Status != "Cancelled" && t.Showtime.Movie != null)
-                .GroupBy(t => t.Showtime.MovieId)
-                .Select(g => new
-                {
-                    MovieId = g.Key,
-                    TicketCount = g.Count(),
-                    Revenue = g.Sum(t => t.Price),
-                    Movie = g.FirstOrDefault().Showtime.Movie
-                })
-                .OrderByDescending(x => x.Revenue)
-                .Take(10)
-                .ToListAsync();
+                // Lấy danh sách vé theo ngày
+                var dailyTickets = await _context.Tickets
+                    .Include(t => t.Showtime)
+                        .ThenInclude(s => s.Movie)
+                    .Include(t => t.Booking)
+                    .Where(t => t.Status != "Cancelled" &&
+                            t.Showtime != null &&
+                            t.Showtime.StartTime.Date >= start.Date &&
+                            t.Showtime.StartTime.Date <= end.Date)
+                    .GroupBy(t => t.Showtime.StartTime.Date)
+                    .Select(g => new
+                    {
+                        Date = g.Key,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(t => t.Price),
+                        ShowtimeCount = g.Select(t => t.ShowtimeId).Distinct().Count(),
+                        MovieCount = g.Select(t => t.Showtime.MovieId).Distinct().Count(),
+                        CustomerCount = g.Select(t => t.Booking.CustomerId).Distinct().Count()
+                    })
+                    .OrderBy(x => x.Date)
+                    .ToListAsync();
 
-            // Thống kê theo thể loại
-            var genreStats = await _context.Tickets
-                .Include(t => t.Showtime)
-                    .ThenInclude(s => s.Movie)
-                        .ThenInclude(m => m.Genres)
-                .Where(t => t.Status != "Cancelled" && t.Showtime.Movie != null)
-                .SelectMany(t => t.Showtime.Movie.Genres.Select(g => new { GenreId = g.GenreId, GenreName = g.Name, Price = t.Price }))
-                .GroupBy(x => new { x.GenreId, x.GenreName })
-                .Select(g => new
-                {
-                    GenreId = g.Key.GenreId,
-                    GenreName = g.Key.GenreName,
-                    TicketCount = g.Count(),
-                    Revenue = g.Sum(x => x.Price)
-                })
-                .OrderByDescending(x => x.TicketCount)
-                .ToListAsync();
+                // Tính tổng số liệu
+                var totalTickets = dailyTickets.Sum(d => d.TicketCount);
+                var totalRevenue = dailyTickets.Sum(d => d.Revenue);
+                var avgDailyRevenue = dailyTickets.Any() ? totalRevenue / dailyTickets.Count : 0;
 
-            ViewBag.TopMoviesByTickets = topMoviesByTickets;
-            ViewBag.TopMoviesByRevenue = topMoviesByRevenue;
-            ViewBag.GenreStats = genreStats;
+                // Top phim bán chạy trong khoảng thời gian
+                var topMovies = await _context.Tickets
+                    .Include(t => t.Showtime)
+                        .ThenInclude(s => s.Movie)
+                    .Where(t => t.Status != "Cancelled" &&
+                            t.Showtime != null &&
+                            t.Showtime.StartTime.Date >= start.Date &&
+                            t.Showtime.StartTime.Date <= end.Date)
+                    .GroupBy(t => new { t.Showtime.MovieId, t.Showtime.Movie.Title })
+                    .Select(g => new
+                    {
+                        MovieId = g.Key.MovieId,
+                        Title = g.Key.Title,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(t => t.Price)
+                    })
+                    .OrderByDescending(x => x.TicketCount)
+                    .Take(5)
+                    .ToListAsync();
 
-            return View();
+                ViewBag.StartDate = start;
+                ViewBag.EndDate = end;
+                ViewBag.DailyTickets = dailyTickets;
+                ViewBag.TotalTickets = totalTickets;
+                ViewBag.TotalRevenue = totalRevenue;
+                ViewBag.AverageDailyRevenue = avgDailyRevenue;
+                ViewBag.TopMovies = topMovies;
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi
+                Console.WriteLine($"Lỗi khi tạo báo cáo theo ngày: {ex.Message}");
+
+                ViewBag.ErrorMessage = "Đã xảy ra lỗi khi tạo báo cáo. Vui lòng thử lại sau.";
+                return View();
+            }
+        }
+
+        // Báo cáo thống kê theo tháng
+        public async Task<IActionResult> MonthlyReport(int? year)
+        {
+            try
+            {
+                // Mặc định là năm hiện tại nếu không có giá trị
+                var currentYear = year ?? DateTime.Today.Year;
+
+                // Lấy dữ liệu vé theo tháng trong năm
+                var monthlyTickets = await _context.Tickets
+                    .Include(t => t.Showtime)
+                    .Include(t => t.Booking)
+                    .Where(t => t.Status != "Cancelled" &&
+                            t.Showtime != null &&
+                            t.Showtime.StartTime.Year == currentYear)
+                    .GroupBy(t => t.Showtime.StartTime.Month)
+                    .Select(g => new
+                    {
+                        Month = g.Key,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(t => t.Price),
+                        ShowtimeCount = g.Select(t => t.ShowtimeId).Distinct().Count(),
+                        MovieCount = g.Select(t => t.Showtime.MovieId).Distinct().Count(),
+                        CustomerCount = g.Select(t => t.Booking.CustomerId).Distinct().Count()
+                    })
+                    .OrderBy(x => x.Month)
+                    .ToListAsync();
+
+                // Lấy danh sách các năm có dữ liệu để hiển thị dropdown
+                var availableYears = await _context.Tickets
+                    .Include(t => t.Showtime)
+                    .Where(t => t.Showtime != null)
+                    .Select(t => t.Showtime.StartTime.Year)
+                    .Distinct()
+                    .OrderByDescending(y => y)
+                    .ToListAsync();
+
+                // Tính tổng số liệu
+                var totalTickets = monthlyTickets.Sum(m => m.TicketCount);
+                var totalRevenue = monthlyTickets.Sum(m => m.Revenue);
+
+                // Top thể loại bán chạy trong năm
+                var topGenres = await _context.Tickets
+                    .Include(t => t.Showtime)
+                        .ThenInclude(s => s.Movie)
+                            .ThenInclude(m => m.Genres)
+                    .Where(t => t.Status != "Cancelled" &&
+                            t.Showtime != null &&
+                            t.Showtime.StartTime.Year == currentYear)
+                    .SelectMany(t => t.Showtime.Movie.Genres.Select(g => new { GenreId = g.GenreId, GenreName = g.Name, Price = t.Price }))
+                    .GroupBy(x => new { x.GenreId, x.GenreName })
+                    .Select(g => new
+                    {
+                        GenreId = g.Key.GenreId,
+                        GenreName = g.Key.GenreName,
+                        TicketCount = g.Count(),
+                        Revenue = g.Sum(x => x.Price)
+                    })
+                    .OrderByDescending(x => x.TicketCount)
+                    .Take(5)
+                    .ToListAsync();
+
+                ViewBag.Year = currentYear;
+                ViewBag.AvailableYears = availableYears;
+                ViewBag.MonthlyTickets = monthlyTickets;
+                ViewBag.TotalTickets = totalTickets;
+                ViewBag.TotalRevenue = totalRevenue;
+                ViewBag.TopGenres = topGenres;
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi
+                Console.WriteLine($"Lỗi khi tạo báo cáo theo tháng: {ex.Message}");
+
+                ViewBag.ErrorMessage = "Đã xảy ra lỗi khi tạo báo cáo. Vui lòng thử lại sau.";
+                return View();
+            }
         }
         #endregion
     }
