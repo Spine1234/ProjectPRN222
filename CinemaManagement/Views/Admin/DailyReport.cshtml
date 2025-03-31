@@ -166,16 +166,29 @@
 </div>
 
 @section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         $(document).ready(function () {
-            // Khởi tạo bảng dữ liệu
-            $('#dailyDataTable').DataTable({
-                order: [[0, 'desc']],
-                language: {
-                    url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/vi.json'
-                }
-            });
+            // Vô hiệu hóa DataTables vì đang gây lỗi
+            // Thay vì khởi tạo DataTables, chỉ áp dụng các lớp CSS cho bảng
+            $('#dailyDataTable').addClass('table table-striped table-hover');
+
+            // Bỏ qua việc khởi tạo DataTables
+            /*
+            if ($.fn.DataTable.isDataTable('#dailyDataTable')) {
+                $('#dailyDataTable').DataTable().destroy();
+            }
+
+            try {
+                $('#dailyDataTable').DataTable({
+                    order: [[0, "desc"]],
+                    language: {
+                        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/vi.json'
+                    }
+                });
+            } catch (e) {
+                console.error("DataTables error:", e);
+            }
+            */
 
             // Xử lý nút chọn nhanh khoảng thời gian
             $('#btnLastWeek').click(function () {
@@ -210,85 +223,107 @@
                 return [year, month, day].join('-');
             }
 
-            // Chart for revenue
-            var revenueCtx = document.getElementById('revenueChart').getContext('2d');
-            var revenueChart = new Chart(revenueCtx, {
-                type: 'line',
-                data: {
-                    labels: [@Html.Raw(dates)],
-                    datasets: [
-                        {
-                            label: 'Doanh thu (VNĐ)',
-                            data: [@revenues],
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: 'Số vé bán ra',
-                            data: [@ticketCounts],
-                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1,
-                            yAxisID: 'y1'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    interaction: {
-                        mode: 'index',
-                        intersect: false
-                    },
-                    scales: {
-                        y: {
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Doanh thu (VNĐ)'
+            try {
+                // Kiểm tra xem phần tử canvas có tồn tại không
+                var revenueChartElement = document.getElementById('revenueChart');
+                if (!revenueChartElement) {
+                    console.error("Chart element not found: revenueChart");
+                    return;
+                }
+
+                // Đảm bảo dữ liệu đúng định dạng
+                var chartLabels = @(string.IsNullOrEmpty(dates) ? "[]" : "[" + Html.Raw(dates) + "]");
+                var chartRevenues = @(string.IsNullOrEmpty(revenues) ? "[]" : "[" + revenues + "]");
+                var chartTickets = @(string.IsNullOrEmpty(ticketCounts) ? "[]" : "[" + ticketCounts + "]");
+
+                // Log dữ liệu để debug
+                console.log("Chart data:", {
+                    labels: chartLabels,
+                    revenues: chartRevenues,
+                    tickets: chartTickets
+                });
+
+                var revenueCtx = revenueChartElement.getContext('2d');
+                var revenueChart = new Chart(revenueCtx, {
+                    type: 'line',
+                    data: {
+                        labels: chartLabels,
+                        datasets: [
+                            {
+                                label: 'Doanh thu (VNĐ)',
+                                data: chartRevenues,
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1,
+                                yAxisID: 'y'
                             },
-                            ticks: {
-                                callback: function (value) {
-                                    return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                            {
+                                label: 'Số vé bán ra',
+                                data: chartTickets,
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1,
+                                yAxisID: 'y1'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        scales: {
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Doanh thu (VNĐ)'
+                                },
+                                ticks: {
+                                    callback: function (value) {
+                                        return new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                                    }
+                                }
+                            },
+                            y1: {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                beginAtZero: true,
+                                grid: {
+                                    drawOnChartArea: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Số vé'
                                 }
                             }
                         },
-                        y1: {
-                            type: 'linear',
-                            display: true,
-                            position: 'right',
-                            beginAtZero: true,
-                            grid: {
-                                drawOnChartArea: false
-                            },
-                            title: {
-                                display: true,
-                                text: 'Số vé'
-                            }
-                        }
-                    },
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    let label = context.dataset.label || '';
-                                    let value = context.raw || 0;
-                                    if (label.includes('Doanh thu')) {
-                                        return label + ': ' + new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
-                                    } else {
-                                        return label + ': ' + value;
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        let label = context.dataset.label || '';
+                                        let value = context.raw || 0;
+                                        if (label.includes('Doanh thu')) {
+                                            return label + ': ' + new Intl.NumberFormat('vi-VN').format(value) + ' VNĐ';
+                                        } else {
+                                            return label + ': ' + value;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-            });
+                });
+            } catch (e) {
+                console.error("Chart initialization error:", e);
+                console.error(e.stack); // In stack trace để biết lỗi ở dòng nào
+            }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 }

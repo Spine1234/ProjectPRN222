@@ -1080,6 +1080,19 @@ namespace CinemaManagement.Controllers
                     .Take(5)
                     .ToListAsync();
 
+                // Chuẩn bị dữ liệu cho biểu đồ - PHẦN THÊM VÀO
+                string dates = "";
+                string ticketCounts = "";
+                string revenues = "";
+
+                if (dailyTickets.Any())
+                {
+                    dates = string.Join(",", dailyTickets.Select(d => $"'{d.Date.ToString("dd/MM")}'"));
+                    ticketCounts = string.Join(",", dailyTickets.Select(d => d.TicketCount));
+                    revenues = string.Join(",", dailyTickets.Select(d => d.Revenue));
+                }
+
+                // Gán dữ liệu cho ViewBag
                 ViewBag.StartDate = start;
                 ViewBag.EndDate = end;
                 ViewBag.DailyTickets = dailyTickets;
@@ -1088,13 +1101,17 @@ namespace CinemaManagement.Controllers
                 ViewBag.AverageDailyRevenue = avgDailyRevenue;
                 ViewBag.TopMovies = topMovies;
 
+                // Thêm các biến cho biểu đồ
+                ViewBag.Dates = dates;
+                ViewBag.TicketCounts = ticketCounts;
+                ViewBag.Revenues = revenues;
+
                 return View();
             }
             catch (Exception ex)
             {
                 // Log lỗi
                 Console.WriteLine($"Lỗi khi tạo báo cáo theo ngày: {ex.Message}");
-
                 ViewBag.ErrorMessage = "Đã xảy ra lỗi khi tạo báo cáo. Vui lòng thử lại sau.";
                 return View();
             }
